@@ -1,6 +1,5 @@
 package com.pluralsight.candycoded;
 
-import android.annotation.NonNull;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -30,7 +29,6 @@ import cz.msebera.android.httpclient.Header;
 public class MainActivity extends AppCompatActivity {
     private Candy[] candies;
     private CandyDbHelper candyDbHelper = new CandyDbHelper(this);
-    private MenuItem mItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +85,7 @@ public class MainActivity extends AppCompatActivity {
     // TODO - Task 1 - Show Store Information Activity
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        mItem = item;
+    public boolean onOptionsItemSelected(MenuItem item) {
         Intent infoIntent = new Intent(this, InfoActivity.class);
         startActivity(infoIntent);
         return super.onOptionsItemSelected(item);
